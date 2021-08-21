@@ -17,7 +17,7 @@ def home():
     
     <br/>
 
-    <h2>Developed By <a href="https://www.delangedev.com/">Trace DeLange</a></h2>
+    <h2>Developed By <a href="https://github.com/tracedelange/">Trace DeLange</a></h2>
 
 
 
