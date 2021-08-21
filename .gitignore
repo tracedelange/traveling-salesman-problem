@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+#Flask-backend
+/flask-backend/env
+
+
+
 # testing
 /coverage
 
