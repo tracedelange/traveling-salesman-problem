@@ -7,7 +7,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  background-color: black;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.header {
+  height: 5vh;
+  background-color: beige;
+  margin:0%;
+  padding:0%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.header h3 {
+  margin: 0%;
+  font-size: 4vh;
+  margin-left: 10%;
+}
+
+.info-window {
+  position: absolute;
+  height: 20vmin;
+  width: 30vmin;
+  border-color: rgb(171, 171, 171);
+  border-style: solid;
+  border-width: 1%;
+  border-radius: 10%;
+  background-color: rgb(211, 211, 211);
+  top: 6vh;
+  right: 1vh;
+  z-index: 100;
+
+  text-align: center;
+  
+
+}
+.info-window ul {
+  padding: 0%;
+}
+
+.info-window ul li {
+  /* text-align: left; */
+  list-style: none;
+  font-size:1.75vmin;
 }
