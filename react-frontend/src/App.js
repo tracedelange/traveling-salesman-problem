@@ -4,6 +4,9 @@ import Header from './components/Header'
 import InfoWindow from './components/InfoWindow'
 import { v4 as uuidv4 } from 'uuid';
 import {shuffle} from './shuffle'
+import { Route, Switch } from 'react-router-dom';
+import AlgorithmSubmission from './components/AlgorithmSubmission';
+
 
 function rFact(num) {
   if (num === 0) { return 1; }
@@ -142,19 +145,31 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Header handleClearClick={handleClearClick} />
-      <InfoWindow progress={progress} cities={cities} />
-      <MainStage
-      handleStageClick={handleStageClick}
-      cities={cities}
-      lines={lines}
 
-      randSolution={randSol}
-      lastLine={lastLine}
-      
-      
-      />
+    
+    <div className="App">
+
+      <Switch>
+        <Route exact path='/solve'>
+
+          <AlgorithmSubmission cities={cities} />
+
+        </Route>
+        <Route path='/'>
+          <Header handleClearClick={handleClearClick}/>
+          <InfoWindow progress={progress} cities={cities} />
+          <MainStage
+          handleStageClick={handleStageClick}
+          cities={cities}
+          lines={lines}
+
+          randSolution={randSol}
+          lastLine={lastLine}
+          />
+        </Route>
+
+        </Switch>
+
     </div>
   );
 }

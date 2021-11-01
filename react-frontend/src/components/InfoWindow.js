@@ -2,16 +2,6 @@ import React, { useState } from 'react'
 
 const InfoWindow = ({ cities, progress }) => {
 
-    // const [solCount, setSolCount] = useState(0)
-
-    // function fac(n) {
-    //     return (n != 1) ? n * fac(n - 1) : 1;
-    //   }
-    // const solutionCount = (n) => {
-
-    //     return (fac(n-1))/2
-
-    // }
     function rFact(num) {
         if (num === 0) { return 1; }
         else { return num * rFact(num - 1); }
@@ -39,7 +29,7 @@ const InfoWindow = ({ cities, progress }) => {
                 <li>Number of unique solutions:</li>
                 <li>{solutionCount}</li>
                 <li>Solutions checked: {progress > solutionCount ? solutionCount : progress}</li>
-
+                <li>Brute Force Progress: { (progress/solutionCount) > 1 ? "100.00" : (((progress / solutionCount) * 100).toFixed(2)) }%</li>
             </ul>
         </div>
     )

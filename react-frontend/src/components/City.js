@@ -7,7 +7,7 @@ const City = ({data, handleCityDrop, handleCityDrag}) => {
             <Circle
             key={data.key}
             name={data.key}
-            draggable
+            // draggable
             // onDragEnd={handleCityDrop}
             onDragMove={handleCityDrag}
             x={data.x}

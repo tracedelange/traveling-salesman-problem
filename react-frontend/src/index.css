@@ -6,10 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/* 
 html, body {
   background-color: black;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -26,13 +26,13 @@ code {
 
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .header h3 {
   margin: 0%;
   font-size: 4vh;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
 
 .info-window {
