@@ -71,7 +71,7 @@ function App() {
       setProgress(0)
       const intervalID = setInterval(() => {
         tickSolution()
-      }, 200);
+      }, 250);
     
       return function cleanup(){
         clearInterval(intervalID)

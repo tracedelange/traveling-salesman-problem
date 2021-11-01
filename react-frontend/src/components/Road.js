@@ -8,7 +8,7 @@ const Road = ({data}) => {
     return (
         <Line
         points={points}
-        stroke={'red'}
+        stroke={"white"}
 
         
         />

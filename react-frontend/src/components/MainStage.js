@@ -4,6 +4,7 @@ import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 import City from './City'
 import { v4 as uuidv4 } from 'uuid';
 import Road from './Road';
+import { RGBA } from 'konva/lib/filters/RGBA';
 
 
 const MainStage = ({ handleStageClick, cities, lines, lastLinem, randSolution }) => {
@@ -68,7 +69,7 @@ const MainStage = ({ handleStageClick, cities, lines, lastLinem, randSolution })
                 height={(window.innerHeight) - ((window.innerHeight) * .05)}
                 x={0}
                 y={0}
-                fill={"#D3D3D3"}
+                fill={"#012A36"}
                 
                 />
             </Layer>

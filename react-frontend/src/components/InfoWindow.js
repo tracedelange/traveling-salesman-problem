@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import {Paper} from '@material-ui/core'
+import { slotShouldForwardProp } from '@mui/material/styles/styled';
 
 const InfoWindow = ({ cities, progress }) => {
 
@@ -19,19 +21,39 @@ const InfoWindow = ({ cities, progress }) => {
         }
     }
 
+
     let solutionCount = getCount(cities.length)
 
+    const isDone = useState(false)
+    const [stats, setStats] = useState({})
+
+
+
+    useEffect(()=>{
+
+        setStats({
+            ...stats,
+            cityCount: cities.length,
+            solutionCount: getCount(cities.length),
+            solutionsChecked: progress > solutionCount ? solutionCount : progress,
+            percentDone: (progress/solutionCount) > 1 ? "100.00" : (((progress / solutionCount) * 100).toFixed(2)),
+        })
+        
+    }, [progress])
+
+
+
     return (
-        <div className="info-window">
+        <Paper className="info-window">
             <ul>
                 <li>Number of cities:</li>
-                <li>{cities.length}</li>
+                <li>{stats.cityCount}</li>
                 <li>Number of unique solutions:</li>
-                <li>{solutionCount}</li>
-                <li>Solutions checked: {progress > solutionCount ? solutionCount : progress}</li>
-                <li>Brute Force Progress: { (progress/solutionCount) > 1 ? "100.00" : (((progress / solutionCount) * 100).toFixed(2)) }%</li>
+                <li>{stats.solutionCount}</li>
+                <li>Solutions checked: {stats.solutionsChecked}</li>
+                <li>Brute Force Progress: {stats.percentDone}%</li>
             </ul>
-        </div>
+        </Paper>
     )
 }
 
